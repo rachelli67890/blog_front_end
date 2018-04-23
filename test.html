@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="滩羊">
+    <meta name="description" content="滩羊">
+    <link rel="icon" type="image/x-icon" href="http://oxmz2m87t.bkt.clouddn.com/ico.png">
+    <title>滩羊</title>
+</head>
+<style>
+    html,
+    body {
+        background-color: "#FFF";
+    }
+
+    html,
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    form,
+    fieldset,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td,
+    img,
+    area,
+    param {
+        margin: 0;
+        padding: 0;
+        font-family: PingFang SC, MicrosoftYaHei, Heiti SC, Helvetica, Roboto, Noto Sans Han, Droid San Fallback;
+        -webkit-font-smoothing: antialiased !important;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-overflow-scrolling: touch;
+        touch-action: none;
+    }
+
+
+    .center {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .header {
+        height: 98px;
+        width: 100%;
+    }
+
+    .headerBox {
+        position: relative;
+        /* width: 1200px; */
+    }
+
+    .body {
+        position: relative;
+        background: url('./src/bg.png') no-repeat center #F9F9F9;
+    }
+
+    .mouse {
+        cursor: hand;
+        cursor: pointer;
+    }
+
+    .bodyBox {
+        position: relative;
+        width: 1200px;
+        height: 790px;
+        background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+    }
+
+    .form {
+        position: absolute;
+        top: 206px;
+        right: 100px;
+        width: 310px;
+        padding: 25px;
+
+        background: #FFF;
+        z-index: 999999;
+    }
+
+    .form-title {
+        margin-bottom: 35px;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .form-input {
+        margin-bottom: 20px;
+        border: 1px solid #D7D7D7;
+        height: 38px;
+        width: 306px;
+        line-height: 38px;
+        font-size: 12px;
+        text-indent: 10px;
+        color: #777777;
+        outline: none;
+    }
+
+    .form-input::-webkit-input-placeholder {
+        color: #777;
+    }
+
+    .form-input::-moz-placeholder {
+        color: #777;
+    }
+
+    .form-input:-ms-input-placeholder {
+        color: #777;
+    }
+
+    .form-item {
+        height: 12px;
+        margin-bottom: 12px;
+    }
+
+    .form-selectbtn {
+        float: left;
+        height: 14px;
+        width: 14px;
+        background: url('./src/icon-btn-select.png')no-repeat center;
+    }
+
+    .form-selectbtn-active {
+        background: url('./src/icon-btn-selected.png')no-repeat center !important;
+    }
+
+    .form-selectbtn-label {
+        float: left;
+        margin-left: 4px;
+        height: 14px;
+        font-size: 14px;
+        color: #000;
+        line-height: 14px;
+    }
+
+    .form-btn {
+        height: 40px;
+        width: 308px;
+        background-color: #94CE42;
+        line-height: 40px;
+        text-align: center;
+        font-size: 17px;
+        color: #FFF;
+        outline: none;
+    }
+
+    .form-btn:active {
+        outline: none;
+    }
+
+    .form-btn:focus {
+        outline: 0;
+    }
+
+    .footer {
+        height: 109px;
+        padding-top: 34px;
+        width: 100%;
+    }
+
+    .footerText {
+        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000;
+    }
+
+    .logo {
+        position: absolute;
+        left: 35px;
+        top: 26px;
+        width: 60px;
+        height: 46px;
+        background: url('./src/logo.png')no-repeat center;
+    }
+
+    .name {
+        position: absolute;
+        left: 107px;
+        top: 24px;
+        width: 252px;
+        height: 25px;
+        background: url('./src/name.png')no-repeat center;
+    }
+
+    .title {
+        position: absolute;
+        top: 58px;
+        left: 110px;
+        font-size: 14px;
+        color: #000;
+    }
+</style>
+
+<body>
+<div>
+    <div class="header">
+        <div class="center headerBox">
+            <div class="logo"></div>
+            <div class="name"></div>
+            <div class="title">企业管理</div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="center bodyBox">
+            <div class="form">
+                <div class="form-title">用户登录</div>
+                <form name="form" action="{{ url('/admin/auth/login') }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="email" name="email" class="form-input"  placeholder="用户名">
+                    <input type="password" name="password" class="form-input" placeholder="密码">
+                <div class="form-item">
+                    <!--<div class="mouse form-selectbtn "></div>-->
+                    <!--<div class="form-selectbtn-label">记住密码</div>-->
+                    <input type="checkbox" name="remember"><i class="indigo"></i> 记住登录
+                </div>
+                <!--<input class="mouse form-btn" type="button" value="登录">-->
+                <button md-ink-ripple type="submit" class="mouse form-btn">登录</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footerText">版权所有：盐池县农牧局 网站技术支持：宁夏溯源科技发展有限公司</div>
+        <div class="footerText">网站保留所有权未经许可不得复制、镜像</div>
+    </div>
+</div>
+<script src="https://o24s0hia8.qnssl.com/lib/jquery/2.2.4/jquery.min.js"></script>
+</body>
+<script>
+    $('.form-selectbtn').on('click', function () {
+        $(this).toggleClass('form-selectbtn-active')
+    })
+</script>
+
+@if (count($errors) > 0)
+<script>
+    @foreach ($errors->all() as $error)
+    humane.log('{{ $error }}');
+        @endforeach
+</script>
+@endif
+
+</html>

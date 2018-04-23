@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <style type="text/css">
+
+        body {
+            background-color: #FFFFFF;
+        }
+        .main.container {
+            margin-top: 2em;
+        }
+
+        .main.menu {
+            margin-top: 4em;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            transition:
+                    box-shadow 0.5s ease,
+                    padding 0.5s ease
+        ;
+        }
+        .main.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+
+        .overlay {
+            float: left;
+            margin: 0em 3em 1em 0em;
+        }
+        .overlay .menu {
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+
+        .main.menu.fixed {
+            background-color: #FFFFFF;
+            border: 1px solid #DDD;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        .overlay.fixed .menu {
+            left: 800px;
+        }
+
+        .text.container .left.floated.image {
+            margin: 2em 2em 2em -4em;
+        }
+        .text.container .right.floated.image {
+            margin: 2em -4em 2em 2em;
+        }
+
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+        }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script>
+        $(document)
+            .ready(function() {
+
+                // fix main menu to page on passing
+                $('.main.menu').visibility({
+                    type: 'fixed'
+                });
+                $('.overlay').visibility({
+                    type: 'fixed',
+                    offset: 80
+                });
+
+                // lazy load images
+                $('.image').visibility({
+                    type: 'image',
+                    transition: 'vertical flip in',
+                    duration: 500
+                });
+
+                // show dropdown on hover
+                $('.main.menu  .ui.dropdown').dropdown({
+                    on: 'hover'
+                });
+            })
+        ;
+    </script>
+    <style>
+        .body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .blog_content {
+            flex: 0.9;
+        }
+    </style>
+
+</head>
+<body class="body">
+
+<!--header-->
+<div id="header" class="ui  vertical masthead center aligned ">
+    <div class="ui container">
+        <div class="ui secondary huge white-text pointing menu">
+            <a href="index.html" class="active item">
+                回到主页
+            </a>
+            <div class=" menu">
+                <div class="ui dropdown  item">
+                    <i class="th icon"></i>
+                    分类 <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="post.html" class="item">English</a>
+                        <a href="post.html" class="item">Russian</a>
+                        <a href="post.html" class="item">Spanish</a>
+                    </div>
+                </div>
+            </div>
+            <a class="item">
+                <i class="tags icon"></i>
+                标签
+            </a>
+            <a href="archives.html" class="item">
+                <i class="archive icon"></i>
+                归档
+            </a>
+            <a href="about.html" class="item">
+                <i class="user icon"></i>
+                关于
+            </a>
+            <div class="right menu">
+                <a class="ui item">
+                    登录
+                </a>
+                <a class="ui item">
+                    注册
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="ui text container">
+        <h1 class="ui header">
+            Just do it .
+        </h1>
+        <h2>Do whatever you want when you want to.</h2>
+        <br>
+    </div>
+</div>
+<!--header.end-->
+
+
+<!--blog_list-->
+<div class="blog_content">
+    <div class="ui main  container">
+        <div class="ui divided items ross_margin">
+            <div class="item">
+                <div class="image">
+                    <img src="/images/image.png">
+                </div>
+                <div class="content">
+                    <a class="header" href="post.html">12 Years a Slave</a>
+                    <div class="meta">
+                        <a class="ui orange tag label">分类</a>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="user icon"></i>
+                        <span class="cinema">Ross.Li</span>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="clock icon"></i>
+                        <span class="cinema">20天之前</span>
+                        <span class="cinema">(2017-12-23)</span>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="eye blue icon"></i>
+                        <span class="ui blue text">234</span>
+                        <i class="comment green icon"></i>
+                        <span class="ui green text ">18</span>
+                        <i class="heart icon red"></i>
+                        <span class="ui text red">55</span>
+                    </div>
+                    <div class="description">
+                        <p>In hac habitasse platea dictumst. Etiam ut purus mattis mauris sodales aliquam. Fusce vulputate eleifend sapien. Cras id dui. Nam at tortor in tellus interdum sagittis.
+                        </p>
+                    </div>
+                    <div class="extra">
+                        <div class="ui label">PHP</div>
+                        <div class="ui label"><i class="globe icon"></i>Javascript</div>
+                        <a href="./post.html">
+                        <div class="ui right floated primary button">
+                            阅读全文
+                            <i class="right chevron icon"></i>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="br"><br /><br /></div>
+            <div class="item">
+                <div class="image">
+                    <img src="/images/image.png">
+                </div>
+                <div class="content">
+                    <a class="header" href="post.html">12 Years a Slave</a>
+                    <div class="meta">
+                        <a class="ui orange tag label">分类</a>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="user icon"></i>
+                        <span class="cinema">Ross.Li</span>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="clock icon"></i>
+                        <span class="cinema">20天之前</span>
+                        <span class="cinema">(2017-12-23)</span>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="eye blue icon"></i>
+                        <span class="ui blue text">234</span>
+                        <i class="comment green icon"></i>
+                        <span class="ui green text ">18</span>
+                        <i class="heart icon red"></i>
+                        <span class="ui text red">55</span>
+                    </div>
+                    <div class="description">
+                        <p>In hac habitasse platea dictumst. Etiam ut purus mattis mauris sodales aliquam. Fusce vulputate eleifend sapien. Cras id dui. Nam at tortor in tellus interdum sagittis.
+                        </p>
+                    </div>
+                    <div class="extra">
+                        <div class="ui label">PHP</div>
+                        <div class="ui label"><i class="globe icon"></i>Javascript</div>
+                        <a href="./post.html">
+                            <div class="ui right floated primary button">
+                                阅读全文
+                                <i class="right chevron icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="br"><br /><br /></div>
+            <div class="item">
+                <div class="image">
+                    <img src="/images/image.png">
+                </div>
+                <div class="content">
+                    <a class="header" href="post.html">12 Years a Slave</a>
+                    <div class="meta">
+                        <a class="ui orange tag label">分类</a>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="user icon"></i>
+                        <span class="cinema">Ross.Li</span>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="clock icon"></i>
+                        <span class="cinema">20天之前</span>
+                        <span class="cinema">(2017-12-23)</span>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="eye blue icon"></i>
+                        <span class="ui blue text">234</span>
+                        <i class="comment green icon"></i>
+                        <span class="ui green text ">18</span>
+                        <i class="heart icon red"></i>
+                        <span class="ui text red">55</span>
+                    </div>
+                    <div class="description">
+                        <p>In hac habitasse platea dictumst. Etiam ut purus mattis mauris sodales aliquam. Fusce vulputate eleifend sapien. Cras id dui. Nam at tortor in tellus interdum sagittis.
+                        </p>
+                    </div>
+                    <div class="extra">
+                        <div class="ui label">PHP</div>
+                        <div class="ui label"><i class="globe icon"></i>Javascript</div>
+                        <a href="./post.html">
+                            <div class="ui right floated primary button">
+                                阅读全文
+                                <i class="right chevron icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="br"><br /><br /></div>
+
+
+
+
+            <!--pagination-->
+            <div class="ui pagination menu">
+                <a class="active item">
+                    1
+                </a>
+                <div class="disabled item">
+                    ...
+                </div>
+                <a class="item">
+                    10
+                </a>
+                <a class="item">
+                    11
+                </a>
+                <a class="item">
+                    12
+                </a>
+            </div>
+            <!--pagination.end-->
+
+        </div>
+    </div>
+</div>
+
+<!--blog_list.end-->
+
+<!--footer-->
+<div class="ui black inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted grid">
+            <div class="three wide column">
+                <h4 class="ui inverted header">版权所有</h4>
+                <div class="ui inverted link list">
+                    <p>盐池县农牧局</p>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">地址</h4>
+                <p>吴忠市盐池县解放路58号</p>
+            </div>
+            <div class="seven wide right floated column">
+                <h4 class="ui inverted header">技术支持</h4>
+                <p>宁夏溯源科技发展有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer.end-->
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <style type="text/css">
+
+        body {
+            background-color: #FFFFFF;
+        }
+        .main.container {
+            margin-top: 2em;
+        }
+
+        .main.menu {
+            margin-top: 4em;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            transition:
+                    box-shadow 0.5s ease,
+                    padding 0.5s ease
+        ;
+        }
+        .main.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+
+        .overlay {
+            float: left;
+            margin: 0em 3em 1em 0em;
+        }
+        .overlay .menu {
+            position: relative;
+            left: 0;
+            transition: left 0.5s ease;
+        }
+
+        .main.menu.fixed {
+            background-color: #FFFFFF;
+            border: 1px solid #DDD;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        .overlay.fixed .menu {
+            left: 800px;
+        }
+
+        .text.container .left.floated.image {
+            margin: 2em 2em 2em -4em;
+        }
+        .text.container .right.floated.image {
+            margin: 2em -4em 2em 2em;
+        }
+
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+        }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script>
+        $(document)
+            .ready(function() {
+
+                // fix main menu to page on passing
+                $('.main.menu').visibility({
+                    type: 'fixed'
+                });
+                $('.overlay').visibility({
+                    type: 'fixed',
+                    offset: 80
+                });
+
+                // lazy load images
+                $('.image').visibility({
+                    type: 'image',
+                    transition: 'vertical flip in',
+                    duration: 500
+                });
+
+                // show dropdown on hover
+                $('.main.menu  .ui.dropdown').dropdown({
+                    on: 'hover'
+                });
+            })
+        ;
+    </script>
+    <style>
+        .body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .blog_content {
+            flex: 0.9;
+        }
+    </style>
+
+</head>
+<body class="body">
+<!--header-->
+<div id="header" class="ui  vertical masthead center aligned ">
+    <div class="ui container">
+        <div class="ui secondary huge white-text pointing menu">
+            <a href="index.html" class="active item">
+                回到主页
+            </a>
+            <div class=" menu">
+                <div class="ui dropdown  item">
+                    <i class="th icon"></i>
+                    分类 <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="post.html" class="item">English</a>
+                        <a href="post.html" class="item">Russian</a>
+                        <a href="post.html" class="item">Spanish</a>
+                    </div>
+                </div>
+            </div>
+            <a class="item">
+                <i class="tags icon"></i>
+                标签
+            </a>
+            <a href="archives.html" class="item">
+                <i class="archive icon"></i>
+                归档
+            </a>
+            <a href="about.html" class="item">
+                <i class="user icon"></i>
+                关于
+            </a>
+            <div class="right menu">
+                <a class="ui item">
+                    登录
+                </a>
+                <a class="ui item">
+                    注册
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="ui text container">
+        <h1 class="ui header">
+            Just do it .
+        </h1>
+        <h2>Do whatever you want when you want to.</h2>
+        <br>
+    </div>
+</div>
+<!--header.end-->
+<div class="blog_content">
+    <div class="container ui ">
+
+        <h1 class="ui header">
+            这里是标题
+        </h1>
+        <br>
+        <div class="meta">
+            <a class="ui orange tag label">分类</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <i class="user icon"></i>
+            <span class="cinema">Ross.Li</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <i class="clock icon"></i>
+            <span class="cinema">20天之前</span>
+            <span class="cinema">(2017-12-23)</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <i class="eye blue icon"></i>
+            <span class="ui blue text">234</span>
+            <i class="comment green icon"></i>
+            <span class="ui green text ">18</span>
+            <i class="heart icon red"></i>
+            <span class="ui text red">55</span>
+        </div>
+        <br><br>
+        <div class="desc">
+            <div class="ui grey large text segment ">
+                <p>这里仅仅是个 简要而已</p>
+            </div>
+        </div>
+        <br><br>
+
+        <!--富文本编辑器内容-->
+        <div class="content">
+            <div class="lph-article-comView">
+
+                <!-- AI影响因子 -->
+                <!-- xhBPeYDbNuuRZkwy -->
+                <!-- AI影响因子 -->
+                <!-- 正文内容 -->
+                <p class="">雷锋网<span style="color:#FD5D3C;">(公众号：雷锋网)</span>AI金融评论消息，4月21日，“风控·命门 2018年第二届全球金融科技风控大会”在北京粤财JW万豪酒店召开。本次大会由一本财经主办，据雷锋网观察，来自银行、金融科技公司、学术研究机构的超过800名代表参加了会议。</p><p>如果将2013年算为中国互联网金融的元年，到现在不过短短五年的时间。从2014年开始，大数据、人工智能等技术开始真正进入互联网金融的风控领域，科技与金融的结合日渐紧密。随着近年来监管日趋收紧，科技公司与金融机构更多地立足于自己的优势领域开展合作，越来越多的金融科技公司定位为利用自己的科技优势，帮助传统金融机构改善业务，以合作者的身份，帮助金融机构做相关运营。</p><p>在这短短五年中，中国金融科技的发展走出了一条独具特色的道路。相比起美国等金融产业成熟的国家，中国的金融发展的历史、产品数量还有一定距离，安全性、制度等方面也需要向成熟国家学习，对中国金融科技行业来说，当前的主要挑战是风控，在本次大会上，多位金融科技公司的代表分享了自己在风控方面的实践，为在监管趋严、资金成本高企的背景下实现互联网金融行业的可持续发展提供了宝贵的经验。</p><p style="text-align: center;"><img alt="风控·命门金融科技风控大会：金融科技可持续发展2.0时代到来" src="https://static.leiphone.com/uploads/new/article/740_740/201804/5adc7fb559c5c.jpg?imageMogr2/format/jpg/quality/90"></p><h3>立足技术、聚焦场景、服务客群<br></h3><p>不约而同地，参加本次大会的三大金融科技平台百度金融、蚂蚁金服和京东金融均提及技术、场景、客户的“三位一体”关系。</p><p>百度副总裁黄爽发表了《风控、产品、客群，如何相互作用形成“铁三角”》的主题演讲并指出：</p><blockquote><p>1、信贷领域习惯“贩卖焦虑”，但脱离了产品、客群、和风险的三角关系，这种焦虑显得很片面，不可持续且不解决实际问题；</p><p>2、科技在产品、客群、风险的铁三角关系中发挥着不可或缺的作用；&nbsp;</p><p>3、针对同样的客群如果你对客群的认知更好、风险管理水平更高，你的产品就会比较有竞争力。</p></blockquote><p>蚂蚁金服微贷风险管理部总经理余泉则针对服务线下商户背后的智能风控进行了分享。在演讲中余泉认为：</p><blockquote><ol class=" list-paddingleft-2" style="list-style-type: decimal;"><li><p>服务微小企业客群，需要了解场景，全面了解客户；</p></li><li><p>大数据风控首先需要和线下风控一样严谨，数据的更有效处理和运用最新算法是第二位的；</p></li><li><p>客群、风险、产品三位一体的网络运转起来会有不一样的化学反应，起到不一样的风险管理效果。<br></p></li></ol></blockquote><p>在随后的演讲中，京东金融风险管理部总经理沈晓春发表了《科技正在风控领域加速落地》的主题演讲，并从数据、技术、运营三方面分析对风控的影响：</p><blockquote><ol class=" list-paddingleft-2" style="list-style-type: decimal;"><li><p>风控能力的三个方向是数据、技术、运营，其中数据能力是风控真正的核心基础；</p></li><li><p>&nbsp;在技术层面上，算法的最终能力取决于底层的算例资源如何实现优化；</p></li><li><p>运营能力实际上驱动了产品和实际场景的复杂度，深化运营能力可以从多维、动态的角度了解客户的需求、了解客户的风险点，达到用户体验与系统风控的极致。<br></p></li></ol></blockquote><p>近日，蚂蚁金服、京东金融、百度金融均在一定程度上表达了强调技术，“不做金融”的提法。立足技术、聚焦场景、服务客群的策略则在此基础上更进一步，这一策略有望充分利用互联网公司在数据和技术上的积累，并从场景设计、用户需求点分析、客户运营商进一步深化运营，扬其所长服务于金融机构。</p><h3>数据技术进入2.0时代</h3><p>此外，来自快催收、ZRobot、快牛金科、趣店、电话邦等企业的代表也就用大数据、AI、知识图谱等创新技术在催收、风险管理、业务领域等进行了主题演讲分享，多位演讲嘉宾认为，创新科技将重新定义传统业务，而数据技术本身在也面临新的突破和创新，在风控领域，数据技术2.0已经到来。</p><p>如捷越联合创始人王晓婷在《Collection 2.0·科技清收新机遇》主题演讲中表示，在催收领域，每期正常还款的客户是好的客户，而每期都逾期，但每期都还款的客户是更好的客户。随着数据技术在金融领域的应用，金融机构比以往可以更准确地进行客户分析和刻画，而催收也不单纯是业务部门，而应将其定义为利润中心，对客户做重新认知，对客户的区分放弃好和坏这个概念，用收益和损失做。</p><p>京东金融与美国ZestFinance合资的数据技术公司ZRobot的CEO乔杨也表达了类似的观点。他认为，在金融信贷领域，风险管理永远是第一位的，它必须穿插信贷交易的全过程，因此利润一定是风险管理的产品而不是欲望的产品。此外他还表示，得益于整个互联网和智能终端的高速发展，数据技术的2.0时代已经到来，这意味着对数据的处理重点已经由“收集”转为“解读”，他同时引用达尔文的“适者生存”理论，不是最强的物种、最聪明的物种能生存下来，而是那些最适应变化的物种能够生存，而在数据技术的2.0时代，谁能够有效深度解读获取的数据才就能在竞争中脱颖而出。</p><p>此外，大会还举办了题为《大数据、区块链、人工智能如何落地风控》、《根据细分场景特征，如何搭建出有效的风控体系》和《传统金融机构的风控，如何转型升级》的论坛讨论。大会同时发布了一本财经第一届金融科技最佳风控企业Top50和最佳风控服务商Top30榜单，雷锋网发现，蚂蚁金服、京东金融、百度金融、陆金所等金融科技平台和冰鉴科技、百融金服、第四范式等金融科技技术服务公司榜上有名。</p><p><br></p>
+                <p>雷锋网原创文章，未经授权禁止转载。详情见<a href="http://dwz.cn/4ErMxZ" rel="nofollow" target="_blank">转载须知</a>。</p>
+                <a href="https://gair.leiphone.com/gair/2018yr" target="_blank">
+                    <img alt="风控·命门金融科技风控大会：金融科技可持续发展2.0时代到来" src="https://static.leiphone.com/uploads/new/category/pic/201804/5ada18954e832.jpeg?imageMogr2/thumbnail/!740x140r/gravity/Center/crop/740x140/quality/90">
+                </a>
+
+                <!-- 正文内容结束 -->
+            </div>
+        </div>
+        <!--富文本编辑器内容.end-->
+        <!--评论区-->
+        <div class="ui small comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="/images/avatar/matt.jpg">
+                </a>
+                <div class="content">
+                    <a class="author">Matt</a>
+                    <div class="metadata">
+                        <span class="date">Today at 5:42PM</span>
+                    </div>
+                    <div class="text">
+                        How artistic!
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="/images/avatar/elliot.jpg">
+                </a>
+
+                <div class="content">
+                    <a class="author">Elliot Fu</a>
+                    <div class="metadata">
+                        <span class="date">Yesterday at 12:30AM</span>
+                    </div>
+                    <div class="text">
+                        <p>This has been very useful for my research. Thanks as well!</p>
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+                <div class="comments">
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="/images/avatar/jenny.jpg">
+                        </a>
+                        <div class="content">
+                            <a class="author">Jenny Hess</a>
+                            <div class="metadata">
+                                <span class="date">Just now</span>
+                            </div>
+                            <div class="text">
+                                Elliot you are always so right :)
+                            </div>
+                            <div class="actions">
+                                <a class="reply">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="/images/avatar/joe.jpg">
+                </a>
+                <div class="content">
+                    <a class="author">Joe Henderson</a>
+                    <div class="metadata">
+                        <span class="date">5 days ago</span>
+                    </div>
+                    <div class="text">
+                        Dude, this is awesome. Thanks so much
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+            </div>
+            <form class="ui reply form">
+                <div class="field">
+                    <textarea></textarea>
+                </div>
+                <div class="ui blue labeled submit icon button">
+                    <i class="icon edit"></i> Add Reply
+                </div>
+            </form>
+        </div>
+        <!--评论区.end-->
+    </div>
+</div>
+
+<div class="ui black inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted grid">
+            <div class="three wide column">
+                <h4 class="ui inverted header">版权所有</h4>
+                <div class="ui inverted link list">
+                    <p>盐池县农牧局</p>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">地址</h4>
+                <p>吴忠市盐池县解放路58号</p>
+            </div>
+            <div class="seven wide right floated column">
+                <h4 class="ui inverted header">技术支持</h4>
+                <p>宁夏溯源科技发展有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
+</body>
